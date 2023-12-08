@@ -33,6 +33,6 @@ int main()
     zeros(rows, solution);
 
     // jacobiMethod(rows, 0.00001, matrix, solution, 50);
-    // gauss_SeidelMethod(rows, 0.00001, matrix, solution, 50);
-    SRSMethod(rows, 0.001, matrix, solution, 50, 0.9);
+    gauss_SeidelMethod(rows, 0.00001, matrix, solution, 50);
+    // SRSMethod(rows, 0.001, matrix, solution, 50, 0.9);
 }
