@@ -11,6 +11,7 @@ void SRSMethod(unsigned int numberOfRows, double tolerance, double matrix[number
         counter++;
         for (unsigned int i = 0; i < numberOfRows; i++)
         {
+            sumOfLine = 0.0;
             for (unsigned int j = 0; j < numberOfRows; j++)
             {
                 if (i == j)
@@ -20,7 +21,6 @@ void SRSMethod(unsigned int numberOfRows, double tolerance, double matrix[number
                 sumOfLine += matrix[i][j] * solution[j];
             }
             solution[i] = (1 - relaxationFactor) * solution[i] + relaxationFactor * ((matrix[i][numberOfRows] - sumOfLine) / matrix[i][i]);
-            sumOfLine = 0.0;
         }
 
         normOfArray = norm(numberOfRows, solution, auxArray);

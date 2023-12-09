@@ -11,6 +11,7 @@ void jacobiMethod(unsigned int numberOfRows, double tolerance, double matrix[num
         counter++;
         for (unsigned int i = 0; i < numberOfRows; i++)
         {
+            sumOfLine = 0.0;
             for (unsigned int j = 0; j < numberOfRows; j++)
             {
                 if (i == j)
@@ -20,7 +21,6 @@ void jacobiMethod(unsigned int numberOfRows, double tolerance, double matrix[num
                 sumOfLine += matrix[i][j] * auxArray[j];
             }
             solution[i] = (matrix[i][numberOfRows] - sumOfLine) / matrix[i][i];
-            sumOfLine = 0.0;
         }
 
         normOfArray = norm(numberOfRows, solution, auxArray);

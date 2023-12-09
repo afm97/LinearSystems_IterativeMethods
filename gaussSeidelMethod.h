@@ -11,6 +11,7 @@ void gauss_SeidelMethod(unsigned int numberOfRows, double tolerance, double matr
         counter++;
         for (unsigned int i = 0; i < numberOfRows; i++)
         {
+            sumOfLine = 0.0;
             for (unsigned int j = 0; j < numberOfRows; j++)
             {
                 if (i == j)
@@ -19,8 +20,8 @@ void gauss_SeidelMethod(unsigned int numberOfRows, double tolerance, double matr
                 }
                 sumOfLine += matrix[i][j] * solution[j];
             }
+
             solution[i] = (matrix[i][numberOfRows] - sumOfLine) / matrix[i][i];
-            sumOfLine = 0.0;
         }
 
         normOfArray = norm(numberOfRows, solution, auxArray);
